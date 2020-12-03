@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<script>
+
+
+
+const delayedPromise = (num) => 
+
+new Promise((resolve) => {
+  setTimeout(() =>{ 
+      console.log('done!')
+     return resolve (num * num)}, 500)
+});
+ 
+
+async function asyncPromise(x) {
+
+let promise = new Promise((resolve) => {
+  setTimeout(() =>{ 
+    console.log('done!')
+     resolve (x * x)} , 500) 
+});
+let result = await promise; // wait until the promise resolves (*)
+
+ return result; // "done!"
+}
+
+
+delayedPromise(5)
+.then(result => console.log(result))
+
+asyncPromise(6)
+.then(result => console.log(result))
+
+</script>

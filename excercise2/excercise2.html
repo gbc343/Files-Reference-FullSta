@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<script>
+
+
+makeUpperCase = (num) => 
+    new Promise ((resolve, reject) =>{
+        if (num.every(nums => typeof nums === 'string')){
+      resolve(num.map(nums => nums.toUpperCase()))
+    } else {
+      reject(Error('No, the array you passed in contained an element that was not a string!'))
+    }
+    })
+
+
+sortWords = (arr) => {
+    return arr.sort();
+
+}
+
+const arrayOfNames = ['jinx','four','clay']
+
+makeUpperCase(arrayOfNames)
+.then(sortWords)
+.then((result) => console.log(result))
+.catch(error => console.log(error))
+
+</script>
+
+
+
